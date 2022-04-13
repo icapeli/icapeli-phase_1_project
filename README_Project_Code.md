@@ -1612,14 +1612,9 @@ data.plot(kind='bar')
 
 
 
-    <AxesSubplot:>
+   
+    ![README_Project_Code_37_1](https://user-images.githubusercontent.com/101752113/163187804-cee051f8-d4db-4a12-8505-046995d5e255.png)
 
-
-
-
-    
-![png](README_Project_Code_files/README_Project_Code_37_1.png)
-    
 
 
 Production Budget and Total Profits have a fairly strong correlation. Otherwise, nothing else correlates. Therefore Recommendation  # 1 is **Go big, budget and profit correlate fairly well so splash the cash if you want big profits**.
