@@ -1613,8 +1613,7 @@ data.plot(kind='bar')
 
 
    
-https://github.com/icapeli/icapeli-phase_1_project/issues/1#issue-1203291305
-
+![image](https://user-images.githubusercontent.com/101752113/163188981-9ebc27b3-b66c-42ab-aace-93e701f1ae91.png)
 
 Production Budget and Total Profits have a fairly strong correlation. Otherwise, nothing else correlates. Therefore Recommendation  # 1 is **Go big, budget and profit correlate fairly well so splash the cash if you want big profits**.
 
