@@ -1607,19 +1607,7 @@ correlations={'Budget-Profit Correlation':by_genre_df['production_budget'].corr(
 data= pd.DataFrame(correlations, index=[2])
 data.plot(kind='bar')
 
-```
-
-
-
-
-    <AxesSubplot:>
-
-
-
-
-    
-![png](README_Project_Code_files/README_Project_Code_37_1.png)
-    
+![image](https://user-images.githubusercontent.com/101752113/163186082-47696a3e-fa1d-44b1-83f1-5e6a12043b8c.png)    
 
 
 Production Budget and Total Profits have a fairly strong correlation. Otherwise, nothing else correlates. Therefore Recommendation  # 1 is **Go big, budget and profit correlate fairly well so splash the cash if you want big profits**.
