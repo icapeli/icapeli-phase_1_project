@@ -1891,7 +1891,6 @@ Genre_Corre.plot(kind='bar')
 ![image](https://user-images.githubusercontent.com/101752113/163193137-e789ada6-f5a5-4f50-905d-33e870ce8ba0.png)
 
 
-
 ```python
 # Worldwide ROI correlation by genre
 more_cor_2= {'Adventure': Adventure['production_budget'].corr(Adventure['worldwide_ROI %']), 
@@ -1909,7 +1908,6 @@ Genre_Corre =pd.DataFrame(more_cor_2, index=[1])
 Genre_Corre.plot(kind='bar')
 
 ![image](https://user-images.githubusercontent.com/101752113/163192732-0d77cc85-3e34-4fee-99ea-55fc4c606eab.png)
-
 
 
 Recommendation # 2 is **Stick with Action, Adventure, and Sci-Film because they have the best correlation with return although overall they are not at all strong. However, things are rosier in foreign markets.**
