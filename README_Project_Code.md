@@ -1867,8 +1867,7 @@ ax.set_ylim([-1,1])
 ```
 
 ![image](https://user-images.githubusercontent.com/101752113/163193236-f154059a-d2fc-48a4-a0e9-88bbdba7b1f0.png)
-![image](https://user-images.githubusercontent.com/101752113/163193137-e789ada6-f5a5-4f50-905d-33e870ce8ba0.png)
-![image](https://user-images.githubusercontent.com/101752113/163192732-0d77cc85-3e34-4fee-99ea-55fc4c606eab.png)
+
     
 
 
@@ -1889,19 +1888,7 @@ more_cor_1= {'Adventure': Adventure['production_budget'].corr(Adventure['foreign
 Genre_Corre =pd.DataFrame(more_cor_1, index=[1])
 Genre_Corre.plot(kind='bar')
 
-```
-
-
-
-
-    <AxesSubplot:>
-
-
-
-
-    
-![png](README_Project_Code_files/README_Project_Code_43_1.png)
-    
+![image](https://user-images.githubusercontent.com/101752113/163193137-e789ada6-f5a5-4f50-905d-33e870ce8ba0.png)
 
 
 
@@ -1921,19 +1908,8 @@ more_cor_2= {'Adventure': Adventure['production_budget'].corr(Adventure['worldwi
 Genre_Corre =pd.DataFrame(more_cor_2, index=[1])
 Genre_Corre.plot(kind='bar')
 
-```
+![image](https://user-images.githubusercontent.com/101752113/163192732-0d77cc85-3e34-4fee-99ea-55fc4c606eab.png)
 
-
-
-
-    <AxesSubplot:>
-
-
-
-
-    
-![png](README_Project_Code_files/README_Project_Code_44_1.png)
-    
 
 
 Recommendation # 2 is **Stick with Action, Adventure, and Sci-Film because they have the best correlation with return although overall they are not at all strong. However, things are rosier in foreign markets.**
@@ -1992,8 +1968,7 @@ ax.legend();
 
 
     
-![png](README_Project_Code_files/README_Project_Code_50_0.png)
-    
+![image](https://user-images.githubusercontent.com/101752113/163193687-1541f61b-6cdf-4e1c-bc53-308924eed14d.png)    
 
 
 So, ROI starts to pick up around 80 minutes. Therefore, here's Recommendation # 3: **Make movies between 80-150 minutes**. That's where the highest ROI films cluster.
