@@ -1866,16 +1866,9 @@ Genre_Correlation.plot(kind='bar')
 ax.set_ylim([-1,1])
 ```
 
-
-
-
-    (-1.0, 1.0)
-
-
-
-
-    
-![png](README_Project_Code_files/README_Project_Code_42_1.png)
+![image](https://user-images.githubusercontent.com/101752113/163193236-f154059a-d2fc-48a4-a0e9-88bbdba7b1f0.png)
+![image](https://user-images.githubusercontent.com/101752113/163193137-e789ada6-f5a5-4f50-905d-33e870ce8ba0.png)
+![image](https://user-images.githubusercontent.com/101752113/163192732-0d77cc85-3e34-4fee-99ea-55fc4c606eab.png)
     
 
 
