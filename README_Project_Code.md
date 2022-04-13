@@ -1887,9 +1887,10 @@ more_cor_1= {'Adventure': Adventure['production_budget'].corr(Adventure['foreign
            'Undetermined':Undetermined['production_budget'].corr(Undetermined['foreign_ROI %'])}
 Genre_Corre =pd.DataFrame(more_cor_1, index=[1])
 Genre_Corre.plot(kind='bar')
+```
 
-![image](https://user-images.githubusercontent.com/101752113/163193137-e789ada6-f5a5-4f50-905d-33e870ce8ba0.png)
 
+![image](https://user-images.githubusercontent.com/101752113/163195274-34dc03e2-76db-476a-ace5-c5922d9fc573.png) 
 
 ```python
 # Worldwide ROI correlation by genre
@@ -1906,7 +1907,7 @@ more_cor_2= {'Adventure': Adventure['production_budget'].corr(Adventure['worldwi
            'Undetermined':Undetermined['production_budget'].corr(Undetermined['worldwide_ROI %'])}
 Genre_Corre =pd.DataFrame(more_cor_2, index=[1])
 Genre_Corre.plot(kind='bar')
-
+```
 ![image](https://user-images.githubusercontent.com/101752113/163192732-0d77cc85-3e34-4fee-99ea-55fc4c606eab.png)
 
 
