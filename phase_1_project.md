@@ -595,8 +595,7 @@ high_return_directors
 
 
 
-![image](https://user-images.githubusercontent.com/101752113/163880107-b254ac77-530d-4496-91bd-00b4510fbbe7.png)
-
+![image](https://user-images.githubusercontent.com/101752113/163880357-36163308-b215-4cf9-9730-b67ef7ec17e0.png)
 
 I'll finish it off by graphing the top 5 directors:
 
@@ -612,8 +611,7 @@ ax1.set_xlabel("Director")
 ax1.set_ylabel("ROI")
 ```
 
-![image](https://user-images.githubusercontent.com/101752113/163880151-21f818c2-18a7-4b96-bb33-80a8cdeea512.png)
-
+![image](https://user-images.githubusercontent.com/101752113/163880411-51985ed7-a69f-4729-98fa-829def16e036.png)
 
 
 Recommendation # 3: **If at all possible, hire M. Night Shyamalan, James DeMonaco, Christopher Landon, Jordan Peele, or Pierre Coffin because they have the highest ROI%**.
