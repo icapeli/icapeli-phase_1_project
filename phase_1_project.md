@@ -1,5 +1,5 @@
 # Final Project : Evlauating the Movie Business for Microsoft's next big move!
-The goal of this project is to analyze data from imdb to assist Microsoft, or any new player, in taking on the film industry. I use the **'tn.movie_budgets.csv.gz'** and **im.db** to analyze the budget and movie details for each film. Then, I will provide conclusions for the client to use in the future.
+The goal of this project is to analyze data from imdb to assist Microsoft, or any new player, in taking on the film industry. I use the **'tn.movie_budgets.csv.gz'** and **im.db** to analyze the budget and movie details for each film. Then, I will provide recommendations for the client to use in the future.
 
 ## Opening the file
 The 1st thing to do is to open the file. Below, I will import the relevant libraries and created a Pandas Dataframe called **df_1**.
@@ -79,7 +79,7 @@ df_1 = df_1.assign(domestic_gross= (df_1['domestic_gross'].apply(lambda x: x.rep
 df_1 = df_1.assign(worldwide_gross= (df_1['worldwide_gross'].apply(lambda x: x.replace(',', ''))))
 ```
 
-The love affair with lambda functions continue as each column will be converted from a string into an integer:
+The love affair with lambda functions continues as each column will be converted from a string into an integer:
 
 
 ```python
@@ -107,7 +107,7 @@ df_1 ['foreign_gross']= df_1['worldwide_gross']- df_1['domestic_gross']
 
 ```
 
-Lastly, I want to create a total profit column which is simply 'worldwide_gross' - 'production_budget' and also domestic, foreign, and worldwide_ROI respectively. These are easy ways to measure profitability. 
+Lastly, I want to create a total profit column which is simply 'worldwide_gross' - 'production_budget' . I will also create domestic, foreign, and worldwide_ROI columns  respectively. These are easy ways to measure profitability. 
 
 
 ```python
@@ -128,7 +128,7 @@ df_1
 ## Opening up SQL File "im.db.zip"
 * This is pretty simple. I will import zipfile.
 * Import SQLite3.
-* Then, I will make the table into pandas Dataframe by selecting pieces of relevant data.
+* Then, I will make the table into a Pandas Dataframe by selecting pieces of relevant data:
 
 
 ```python
@@ -159,7 +159,7 @@ df = pd.read_sql_query('SELECT * FROM known_for', conn)
     Table Name : [('movie_basics',), ('directors',), ('known_for',), ('movie_akas',), ('movie_ratings',), ('persons',), ('principals',), ('writers',)]
     
 
-Here, I am choosing the 'genres','primary_title', movie_id, and 'runtime_minutes' columns. They will be analyzed. 'primary_title' could be useful when I merge with df_1.
+Here, I am choosing the 'genres' ,'primary_title', movie_id, and 'runtime_minutes' columns. They will be analyzed. 'primary_title' could be useful when I merge with df_1.
 
 The other columns are irrelevant for our purposes.
 
@@ -186,7 +186,7 @@ df_0
 
 
 
-Here we go. M&A Pandas style! I use an inner join where every common 'movie' from df_1 and 'primary_title' from df_0 come together:
+Here we go. M&A Pandas style! I use an inner merge where every common 'movie' from df_1 and 'primary_title' from df_0 come together:
 
 
 ```python
@@ -256,7 +256,7 @@ by_genre_df['runtime_minutes'].fillna(by_genre_df['runtime_minutes'].median(), i
     * Finally, we'll find the top 5 directors by runtime.
 
 
-I will import the relevant libraries.
+I will import the relevant libraries:
 
 
 ```python
@@ -336,8 +336,7 @@ ax1.set_ylabel("ROI")
 
 
     
-![image](https://user-images.githubusercontent.com/101752113/163876502-fadb0ee9-797d-4c13-9a15-4b0d0ba55414.png)    
-
+![image](https://user-images.githubusercontent.com/101752113/163901013-277f6b97-18d3-456a-b086-bb0d97ce5687.png)
 
 Hmmm...this leads to Recommendation #1: **Make Adventure, Sci-Fi, Comedy, Fantasy, Action, and Romance Films because they make the most money**.
 
@@ -391,7 +390,7 @@ Now let's make a bar graph!
 * First, let's make a dictionary called 'film_length_ROIs' that includes all the median ROIs. 
 * Then, let's sort and order. 
 * Then, we'll make a DataFrame. 
-* Finally, we'll graph the DataFrame
+* Finally, we'll graph the DataFrame.
 
 
 ```python
@@ -458,7 +457,7 @@ df_directors
 
 
 
-Now let's merge these 2 columns!
+Now let's merge these 2 tables!
 
 
 ```python
@@ -509,7 +508,7 @@ director_list_df
 
 
 
-Ok, now I need to assign those directors to their respective films. To do that,I am going to merge 'director_list_df' with 'by_genre_df' on their shared 'movie_id' column. It's important to merge on 'movie_id' because it is unique to a film. Then, I will drop duplucates.
+Ok, now I need to assign those directors to their respective films. To do that, I am going to merge 'director_list_df' with 'by_genre_df' on their shared 'movie_id' column. It's important to merge on 'movie_id' because it is unique to a film. Then, I will drop duplicates.
 
 
 ```python
@@ -526,7 +525,7 @@ Director_movie_df
 
 
 
-Nice table. Next, I want to limit my DataFrame where the 'production_budget' is greater than $5 mil. A budget less than 5mil. is considered a low budget film according to:
+Nice table. Next, I want to limit my DataFrame to films where the 'production_budget' is greater than $5 mil. A budget less than 5mil. is considered a low budget film according to:
  
 https://www.studiobinder.com/blog/production-budget/
 
@@ -538,7 +537,7 @@ budget= Director_movie_df.loc[Director_movie_df['production_budget'] >= 5000000]
 ```
 
 Next up:
-* I will create a new a new dictionary called director total. The dictionary 
+* I will create a new a new dictionary called director_total.
 * Then, I will use .aggregate to add the 'worldwide_ROI %' for each director. 
 * Then I will show the top 10 directors.
 
@@ -580,8 +579,8 @@ Dir_Total_dict=Actual_dir_total.to_dict()
 
 
 Now:
-* Let's sort the list in reverse order using sorted, itemgetter, and reverse=True.
-* Then let's make that sorted dictionary into a DataFrame
+* Let's sort the dictionary in reverse order using sorted, itemgetter, and reverse=True.
+* Then let's make that sorted dictionary into a DataFrame.
 * Next, I will rename the columns 'Director' and 'ROI' because they naturally come out as '0' and '1'.
 * Lastly, let's take a look at the DataFrame.
 
