@@ -1,9 +1,43 @@
 # Final Project : Evlauating the Movie Business for Microsoft's next big move!
-The goal of this project is to analyze data from imdb to assist Microsoft, or any new player, in taking on the film industry. I use the **'tn.movie_budgets.csv.gz'** and **im.db** to analyze the budget and movie details for each film. Then, I will provide conclusions for the client to use in the future.
 
 
-## Opening the file
-The 1st thing to do is to open the file. Below, I will import the relevant libraries and created a Pandas Dataframe called **df_1**.
+## Overview
+The goal of this project is to provide recommendations for Microsoft that will guide them toward the best types of films to make. Using descriptive analysis, this project will show what types of genres, film durations, and which directors are the most profitable. This knolwedge will allow Microsoft to make the best decisions in building their film studio.
+
+# Business Problem
+Microsoft is a storied, multi-billion dollar corporation but lacks any experience in the movie industry. Knowing the most profitable genres, film durations, and directors will give Microsoft a much needed advantage in a highly competitive industry.
+
+# Data 
+* IMDb (Internet Movie Datbase) contains thousands of films with information on budget, gross, and many other pieces of data.
+* I am limiting the data to films from 2012 and after. Why? Most of the relevant industry players were already involved and it wouldn’t be useful to have data before the rise of streaming. 
+* This means that we are still analyzing 14 films.
+
+# Methods
+
+## I will use ROI % as the measure of profitability. 
+## ROI % is (Gross /Budget)*100.
+## Example: A film that grosses $20 mil. on a $5 mil. budget  would have an ROI of 400%. 
+
+# Results
+
+Adventure, Sci-Fi and Comedy are the highest median ROI% among all genres.
+
+
+![image](https://user-images.githubusercontent.com/101752113/164085999-fd69af05-4b9a-4c25-baf2-67e9b395f931.png)
+
+# Runtime Results Criteria
+* Short films=  Less than or equal to 93 minutes.
+* 93 minutes= 25th percentile of this dataset.
+* Medium Length Films=  Between 80 and 116 minutes.
+* Median film length = 103 minutes.
+*Long Films=  Over 116 minutes.
+*116 minutes= 75th percentile of this dataset.
+
+
+
+
+
+
 
 
 ```python
@@ -20,10 +54,6 @@ df_1 = pd.read_csv('tn.movie_budgets.csv.gz')
 df_1
 
 ```
-
-
-
-
 ![image](https://user-images.githubusercontent.com/101752113/163199749-5137119c-d9cb-40ea-9901-4a7d9d5bb4da.png)
 
 
@@ -33,9 +63,9 @@ Next, I create a new column called 'Year' using Pandas DatetimeIndex class.
 
 ```python
 # Creating a year column
-df_1['Year'] = pd.DatetimeIndex(df_1['release_date']).year  
-
 ```
+
+
 
 ## Preparing and Cleaning
 
@@ -45,18 +75,13 @@ df_1['Year'] = pd.DatetimeIndex(df_1['release_date']).year
 
 Limiting to 2012:
 
+![image](https://user-images.githubusercontent.com/101752113/163199749-5137119c-d9cb-40ea-9901-4a7d9d5bb4da.png)
 
 ```python
 #Limiting to past 10 years
 df_1=df_1.loc[df_1['Year'] > 2011]
 df_1
 ```
-
-
-
-
-![image](https://user-images.githubusercontent.com/101752113/163200551-d08428bc-9900-413d-a834-046cd16bf777.png)
-
 
 
 Then, I use a lambda function to replace the $ sign with an empty space:
@@ -82,10 +107,13 @@ df_1['worldwide_gross']=df_1['worldwide_gross'].apply(lambda x: x.replace(',', '
 df_1
 ```
 
-
-
-
 ![image](https://user-images.githubusercontent.com/101752113/163200853-e7ae5e96-7eec-40ef-9596-1fc8dd093c80.png)
+
+
+
+    
+
+
 
 
 The love affair with lambda functions continue as each column will be converted from a string into an integer:
@@ -111,9 +139,9 @@ df_1 ['foreign_gross']= df_1['worldwide_gross']- df_1['domestic_gross']
 ```
 
 
+
+
 ![image](https://user-images.githubusercontent.com/101752113/163201120-8e149477-5932-44c2-b0ab-d6659107c8ff.png)
-
-
 
 
 
@@ -181,10 +209,8 @@ FROM movie_basics
 df_0
 ```
 
-
-
-
 ![image](https://user-images.githubusercontent.com/101752113/163201531-318952d1-8667-4d7a-a9e1-8d7377f4a66d.png)
+
 
 
 Here we go. M&A Pandas style! I use an inner join where every common 'movie' from df_1 and 'primary_title' from df_0 come together:
@@ -195,6 +221,9 @@ Here we go. M&A Pandas style! I use an inner join where every common 'movie' fro
 by_genre_df=df_1.merge(df_0, how= 'inner', left_on='movie', right_on='primary_title')
 by_genre_df
 ```
+
+
+
 
 ![image](https://user-images.githubusercontent.com/101752113/163201723-fbcd9ca0-8305-405d-8121-2b0cfeb87902.png)
 
@@ -207,9 +236,6 @@ Let's use df.drop to eliminate duplicates.
 by_genre_df.drop_duplicates(subset='movie', keep='first', inplace=True, ignore_index=False)
 by_genre_df
 ```
-
-
-
 
 ![image](https://user-images.githubusercontent.com/101752113/163201928-13d9c053-d292-4496-bef4-fb9376438036.png)
 
@@ -230,8 +256,8 @@ by_genre_df
 
 
 
-
 ![image](https://user-images.githubusercontent.com/101752113/163202250-42551bbd-0dea-4001-9ce5-98f150186ddb.png)
+
 
 
 Wait a minute! If I am going to use 'genres' and 'runtime_minutes' for analysis then I must use fillna to eliminate null values.
@@ -268,12 +294,10 @@ data= pd.DataFrame(correlations, index=[2])
 data.plot(kind='bar')
 
 ```
-
-
-
-
-   
 ![image](https://user-images.githubusercontent.com/101752113/163188981-9ebc27b3-b66c-42ab-aace-93e701f1ae91.png)
+
+    
+
 
 Production Budget and Total Profits have a fairly strong correlation. Otherwise, nothing else correlates. Therefore Recommendation  # 1 is **Go big, budget and profit correlate fairly well so splash the cash if you want big profits**.
 
@@ -297,11 +321,10 @@ Documentary=by_genre_df[by_genre_df.genres.str.contains('Documentary')]
 Adventure
 ```
 
-
-
-
-
 ![image](https://user-images.githubusercontent.com/101752113/163202557-e815f1a5-0c16-4bb4-92bc-0e06e31120fa.png)
+
+
+
 
 Again, I want to see how the budgets in these genres correlate with return. So we'll make bar graphs. I would have done a clustered bar graph but with so many genres the result would have been unintelligible.
 
@@ -323,7 +346,6 @@ Genre_Correlation =pd.DataFrame(domestic_genre_cor, index=[1])
 Genre_Correlation.plot(kind='bar')
 ax.set_ylim([-1,1])
 ```
-
 ![image](https://user-images.githubusercontent.com/101752113/163193236-f154059a-d2fc-48a4-a0e9-88bbdba7b1f0.png)
 
     
@@ -345,10 +367,13 @@ more_cor_1= {'Adventure': Adventure['production_budget'].corr(Adventure['foreign
            'Undetermined':Undetermined['production_budget'].corr(Undetermined['foreign_ROI %'])}
 Genre_Corre =pd.DataFrame(more_cor_1, index=[1])
 Genre_Corre.plot(kind='bar')
+
 ```
-
-
 ![image](https://user-images.githubusercontent.com/101752113/163195274-34dc03e2-76db-476a-ace5-c5922d9fc573.png) 
+
+    
+
+
 
 ```python
 # Worldwide ROI correlation by genre
@@ -365,8 +390,11 @@ more_cor_2= {'Adventure': Adventure['production_budget'].corr(Adventure['worldwi
            'Undetermined':Undetermined['production_budget'].corr(Undetermined['worldwide_ROI %'])}
 Genre_Corre =pd.DataFrame(more_cor_2, index=[1])
 Genre_Corre.plot(kind='bar')
+
 ```
 ![image](https://user-images.githubusercontent.com/101752113/163192732-0d77cc85-3e34-4fee-99ea-55fc4c606eab.png)
+
+    
 
 
 Recommendation # 2 is **Stick with Action, Adventure, and Sci-Film because they have the best correlation with return although overall they are not at all strong. However, things are rosier in foreign markets.**
@@ -426,6 +454,7 @@ ax.legend();
 
     
 ![image](https://user-images.githubusercontent.com/101752113/163193687-1541f61b-6cdf-4e1c-bc53-308924eed14d.png)    
+    
 
 
 So, ROI starts to pick up around 80 minutes. Therefore, here's Recommendation # 3: **Make movies between 80-150 minutes**. That's where the highest ROI films cluster.
