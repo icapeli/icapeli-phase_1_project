@@ -54,7 +54,7 @@ Long films have the highest  median ROI %.
 # Results
 These are the 5 directors with the highest ROI%:
 
-![image](https://user-images.githubusercontent.com/101752113/164087753-81160ba1-7bae-4ea1-9986-0cc088e273ad.png)
+![image](https://user-images.githubusercontent.com/101752113/164277574-98f69f98-5f17-40ef-81ca-db938917a2a4.png)
 
 # Conclusions
 
