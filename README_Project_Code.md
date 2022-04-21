@@ -10,7 +10,7 @@ Microsoft is a storied, multi-billion dollar corporation but lacks any experienc
 # Data 
 * IMDb (Internet Movie Datbase) contains thousands of films with information on budget, gross, and many other pieces of data.
 * I am limiting the data to films from 2012 and after. Why? Most of the relevant industry players were already involved and it wouldn’t be useful to have data before the rise of streaming. 
-* This means that we are still analyzing 14 films.
+* This means that I am still analyzing over 2000 films.
 
 # Methods
 
@@ -46,21 +46,22 @@ Long films have the highest  median ROI %.
 
 #  Director Criteria
 
-* Again, we are limiting the data to the last 10 years. Therefore, directors who have not made a film in the last 10 years will not appear. So, for example, James Cameron would not make the list since he hasn’t made a film since 2009. If we included films before 2012, we would get many directors who are inactive.
+* Again, I am limiting the data to the last 10 years. Therefore, directors who have not made a film in the last 10 years will not appear. So, for example, James Cameron would not make the list since he hasn’t made a film since 2009. If we included films before 2012, would get many directors who are inactive.
 
 * According to https://www.studiobinder.com/blog/production-budget/, films with budgets below $5 mil. are considered low budget films. Only directors of  films with a budget of $5 mil. or above are considered for this query.
 * And yes, this actually does effect the data. If I simply only included films with budgets above $5mil. then a few of the top 5 would not be included. 
+* Lastly, in order to avoid flashes in the pan, I am only including directors who have made 2 or more films in the last 10 years.
 
 # Results
 These are the 5 directors with the highest ROI%:
 
-![image](https://user-images.githubusercontent.com/101752113/164277574-98f69f98-5f17-40ef-81ca-db938917a2a4.png)
+![image](https://user-images.githubusercontent.com/101752113/164544672-cb20873c-eaee-465a-b271-6bf1eda321ca.png)
 
 # Conclusions
 
 * Recommendation #1: **Make Adventure, Sci-Fi, and Comedy films because they are the most profitable**. 
 * Recommendation # 2: **Make long films because they are the most profitable. Their median ROI is almost 250%**.
-* Recommendation # 3: **If at all possible, hire M. Night Shyamalan, Christopher Landon, Jordan Peele, Pierre Coffin, or John R. Leonetti because they have the highest ROI% for their films. They have had tremendous success with films with a budget over $ 5mil**.
+* Recommendation # 3: **If at all possible, hire M. Night Shyamalan, John R. Leonetti, Ariel Schulnman, Pierre Coffin, or David Gordon Green because they have the highest ROI%**.
 
 # Next Steps
 
