@@ -61,7 +61,7 @@ These are the 5 directors with the highest ROI%:
 
 * Recommendation #1: **Make Adventure, Sci-Fi, and Comedy films because they are the most profitable**. 
 * Recommendation # 2: **Make long films because they are the most profitable. Their median ROI is almost 250%**.
-* Recommendation # 3: **If at all possible, hire M. Night Shyamalan, John R. Leonetti, Ariel Schulnman, Pierre Coffin, or David Gordon Green because they have the highest ROI%**.
+* Recommendation # 3: **If at all possible, hire M. Night Shyamalan, John R. Leonetti, Ariel Schulnman, Pierre Coffin, or David Gordon Green because they have the highest  average ROI%**.
 
 # Next Steps
 
