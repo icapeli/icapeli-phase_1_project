@@ -46,10 +46,10 @@ Long films have the highest  median ROI %.
 
 #  Director Criteria
 
-* Again, I am limiting the data to the last 10 years. Therefore, directors who have not made a film in the last 10 years will not appear. So, for example, James Cameron would not make the list since he hasn’t made a film since 2009. If we included films before 2012, would get many directors who are inactive.
+* Again, I am limiting the data to the last 10 years. Therefore, directors who have not made a film in the last 10 years will not appear. So, for example, James Cameron would not make the list since he hasn’t made a film since 2009. If we included films before 2012, we would get many directors who are inactive.
 
 * According to https://www.studiobinder.com/blog/production-budget/, films with budgets below $5 mil. are considered low budget films. Only directors of  films with a budget of $5 mil. or above are considered for this query.
-* And yes, this actually does effect the data. If I simply only included films with budgets above $5mil. then a few of the top 5 would not be included. 
+* And yes, this actually does effect the data. If I simply only included films with budgets above $5mil. then it actually would efect the data since $5mil. appears the budget for numerous films. 
 * Lastly, in order to avoid flashes in the pan, I am only including directors who have made 2 or more films in the last 10 years.
 
 # Results
@@ -61,7 +61,7 @@ These are the 5 directors with the highest ROI%:
 
 * Recommendation #1: **Make Adventure, Sci-Fi, and Comedy films because they are the most profitable**. 
 * Recommendation # 2: **Make long films because they are the most profitable. Their median ROI is almost 250%**.
-* Recommendation # 3: **If at all possible, hire M. Night Shyamalan, John R. Leonetti, Ariel Schulnman, Pierre Coffin, or David Gordon Green because they have the highest  average ROI%**.
+* Recommendation # 3: **If at all possible, hire M. Night Shyamalan, John R. Leonetti, Ariel Schulman, Pierre Coffin, or David Gordon Green because they have the highest  average ROI%**.
 
 # Next Steps
 
